@@ -424,6 +424,20 @@ body.dark .filter-btn.active {
   overflow-y: scroll;
   scrollbar-width: 5px;
 }
+.modal-dialog::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.modal-dialog::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  min-height: 40px;
+  max-height: 60px;
+  background: rgba(100, 100, 100, 0.3);
+}
+.modal-dialog::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.6);
+}
 
 .modal-close {
   position: absolute;
