@@ -31,6 +31,10 @@ html {
   scroll-behavior: smooth;
 }
 
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+
 body.dark {
   --bg: #0f172a;
   --surface: #1e293b;
@@ -416,12 +420,15 @@ body.dark .filter-btn.active {
   border-radius: 28px;
   padding: 28px;
   position: relative;
+  max-height: 560px;
+  overflow-y: scroll;
+  scrollbar-width: 5px;
 }
 
 .modal-close {
   position: absolute;
-  top: 16px;
-  right: 20px;
+  top: 5px;
+  right: 10px;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--text-secondary);
