@@ -4,94 +4,137 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
     />
-    <title>CodeMarket - Jual Source Code Premium</title>
-    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>CodeTlawXp • Jual Source Code Profesional</title>
+    <!-- Font Awesome 6 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container nav-inner">
-        <div class="logo"><i class="fas fa-code"></i> CodeTlawXp</div>
-        <div class="nav-controls">
-          <button class="dark-toggle" id="darkModeBtn">
-            <i class="fas fa-moon"></i> <span>Mode Gelap</span>
-          </button>
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-code"></i> CodeTlawXp</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#" class="active"><i class="fas fa-home"></i> Beranda</a>
+          </li>
+          <li>
+            <a href="#catalog"><i class="fas fa-store"></i> Katalog</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-info-circle"></i> Tentang</a>
+          </li>
+          <li>
+            <a href="#footer"><i class="fas fa-envelope"></i> Kontak</a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          <p>© 2025 CodeMart</p>
         </div>
-      </div>
-    </nav>
+      </aside>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <section class="hero">
-      <div class="container">
-        <h1>Jual Source Code Premium</h1>
-        <p>
-          Dapatkan source code terbaik untuk project Anda. Mulai dari Laravel,
-          React, Mobile, hingga Fullstack.
-        </p>
-      </div>
-    </section>
+      <!-- Main Content -->
+      <div class="main-content">
+        <header>
+          <div class="container navbar">
+            <button class="menu-toggle" id="menuToggle">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div style="font-weight: 600; font-size: 1.2rem">
+              Jelajahi Source Code
+            </div>
+            <button id="darkModeToggle" class="dark-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </header>
 
-    <div class="container">
-      <div class="search-filter">
-        <div class="search-box">
-          <i class="fas fa-search"></i>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Cari source code..."
-          />
-        </div>
-        <div class="filter-group" id="filterGroup">
-          <button data-category="all" class="filter-btn active">Semua</button>
-          <button data-category="laravel" class="filter-btn">Laravel</button>
-          <button data-category="react" class="filter-btn">React</button>
-          <button data-category="mobile" class="filter-btn">Mobile</button>
-          <button data-category="fullstack" class="filter-btn">
-            Fullstack
-          </button>
-        </div>
-      </div>
+        <main class="container">
+          <section class="hero">
+            <h1>Source Code Siap Pakai</h1>
+            <p>
+              Dapatkan source code terbaik untuk project Anda.
+              <!-- Mulai dari Laravel, React, Mobile, hingga Fullstack. -->
+            </p>
+          </section>
 
-      <div id="productsContainer" class="products-grid"></div>
-      <div class="load-more-container" id="loadMoreWrapper">
-        <button class="load-more-btn" id="loadMoreBtn">Load More</button>
+          <div class="toolbar" id="catalog">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari source code..."
+              />
+            </div>
+            <div class="filter-buttons" id="filterButtons">
+              <button class="filter-btn active" data-category="all">
+                Semua
+              </button>
+              <button class="filter-btn" data-category="website">
+                Website
+              </button>
+              <button class="filter-btn" data-category="mobile">Mobile</button>
+              <button class="filter-btn" data-category="dashboard">
+                Dashboard
+              </button>
+              <button class="filter-btn" data-category="api">API</button>
+            </div>
+          </div>
+
+          <div class="grid" id="productGrid"></div>
+          <div class="load-more-container" id="loadMoreContainer">
+            <button class="btn btn-outline" id="loadMoreBtn">
+              <i class="fas fa-sync-alt"></i> Muat Lebih Banyak
+            </button>
+          </div>
+
+          <section id="about" class="about-section">
+            <h2><i class="fas fa-info-circle"></i> Tentang CodeTlawXp</h2>
+            <p
+              style="
+                max-width: 700px;
+                margin: 16px auto;
+                color: var(--text-secondary);
+              "
+            >
+              Marketplace source code berkualitas dengan dokumentasi lengkap.
+              Transaksi aman via WhatsApp.
+            </p>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="container footer-content" id="footer">
+            <div>
+              <h3>CodeTlawXp</h3>
+              <p>Source code terpercaya.</p>
+            </div>
+            <div>
+              <p><i class="fab fa-whatsapp"></i> 0812-3456-7890</p>
+              <p><i class="far fa-envelope"></i> support@codemart.id</p>
+            </div>
+          </div>
+          <div class="container" style="text-align: center; margin-top: 20px">
+            © 2025 CodeTlawXp.
+          </div>
+        </footer>
       </div>
     </div>
 
-    <footer>
-      <p>
-        &copy; 2025 CodeMarket - Jual source code berkualitas tinggi. Hubungi
-        via WhatsApp untuk pembelian.
-      </p>
-    </footer>
-
-    <!-- Modal Detail -->
-    <div id="productModal" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" id="closeModalBtn">&times;</span>
-        <h3 id="modalTitle"></h3>
-        <p
-          id="modalDesc"
-          style="margin: 0.75rem 0; color: var(--text-secondary)"
-        ></p>
-        <div><span class="card-category" id="modalCategory"></span></div>
-        <div class="modal-price" id="modalPrice"></div>
-        <a href="#" id="whatsappLink" class="whatsapp-btn" target="_blank">
-          <i class="fab fa-whatsapp"></i> Beli via WhatsApp
-        </a>
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+      <div class="modal-dialog">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <div id="modalContent"></div>
       </div>
     </div>
-
     <script src="assets/js/script.js"></script>
   </body>
 </html>
